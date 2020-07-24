@@ -4100,7 +4100,7 @@ advertise </a></li>
                         <div class="lang_apply_btn_wrapper m24_cover">
                             <div class="lang_apply_btn">
     
-                                <a onclick="verification1()">login now</a>
+                                <a onclick="LoginVerification()">login now</a>
     
                             </div>
 
@@ -4155,7 +4155,7 @@ advertise </a></li>
                         <div class="lang_apply_btn_wrapper m24_cover">
                             <div class="lang_apply_btn">
     
-                                <a onclick="verification2()">register</a>
+                                <a onclick="RegisterVerification()">register</a>
     
                             </div>
 
@@ -4333,7 +4333,7 @@ advertise </a></li>
 <script src="js/custom.js"></script>
 <!-- custom js-->
 <script>
-    function verification1() {
+    function LoginVerification() {
         login_email = document.getElementById("login-email").value;
         login_password = document.getElementById("login-password").value;
         var url = "http://localhost:3000/api/users/"+login_email+"/"+login_password;
@@ -4361,7 +4361,7 @@ advertise </a></li>
 </script>
 
 <script>
-	function verification2() {
+	function RegisterVerification() {
 		regis_name = document.getElementById('regis-name').value;
 		regis_email = document.getElementById('regis-email').value;
 		regis_password = document.getElementById('regis-password').value;
