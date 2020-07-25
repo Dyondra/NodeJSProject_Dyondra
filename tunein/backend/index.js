@@ -37,7 +37,7 @@ app.post('/api/users', (req, res) => {
         console.log('Validation error');
 
         var jsonRespond = {
-            result: "",
+            result: user,
             message: error.details[0].message
         }
 
@@ -51,7 +51,7 @@ app.post('/api/users', (req, res) => {
         console.log('Email: '+req.body.email+' is already registered');
 
         var jsonRespond = {
-            result: "",
+            result: users,
             message: "Registration failed. Email "+req.body.email+" is already registered. Please use other email."
         }
 

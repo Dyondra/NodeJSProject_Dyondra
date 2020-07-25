@@ -4131,6 +4131,7 @@ advertise </a></li>
                     </div>
                     <div class="login_form_wrapper">
                         <div id="registration_result" ></div>
+
 						<div class="icon_form comments_form">
 							<input id="regis-name"  type="text" class="form-control" placeholder="Name" required>
 						</div>
@@ -4351,6 +4352,7 @@ advertise </a></li>
             var respond = JSON.parse(xhr.responseText);
             if (xhr.readyState == 4 && xhr.status == "200") {
                 document.getElementById('registration_result').innerHTML = respond.message;
+                window.location.replace("index.html");
             } else {
                 console.error(respond);
                 document.getElementById('registration_result').innerHTML = respond.message;
